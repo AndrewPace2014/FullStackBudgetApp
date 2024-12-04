@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './DataComponent.css'; // Import CSS for styling
 
 function DataComponent() {
     const [data, setData] = useState(null);
@@ -21,11 +22,11 @@ function DataComponent() {
     }, []);
 
     if (error) {
-        return <div>API Error: {error.message}</div>;
+        return <div className="error">API Error: {error.message}</div>;
     }
 
     if (!data) {
-        return <div>Loading...</div>;
+        return <div className="loading">Loading...</div>;
     }
 
     console.log("Data state:", data); // Log the data state
@@ -41,10 +42,10 @@ function DataComponent() {
     console.log("Monthly Spending Data Values:", Object.values(monthlySpendingData));
 
     return (
-        <div>
+        <div className="data-component">
             <h1>Monthly Spending Data</h1>
             {Object.keys(monthlySpendingData).length > 0 ? (
-                <table>
+                <table className="spending-table">
                     <thead>
                         <tr>
                             <th>Month</th>
@@ -69,7 +70,7 @@ function DataComponent() {
             )}
             <h2>Outlier Months</h2>
             {outlierMonths.length > 0 ? (
-                <ul>
+                <ul className="outlier-list">
                     {outlierMonths.map((outlier, index) => (
                         <li key={index}>{`Month: ${outlier[0]}, Category: ${outlier[1]}`}</li>
                     ))}
@@ -78,7 +79,7 @@ function DataComponent() {
                 <p>No outlier months available.</p>
             )}
             <h2>Summary</h2>
-            <pre>{summary}</pre>
+            <pre className="summary">{summary}</pre>
         </div>
     );
 }
