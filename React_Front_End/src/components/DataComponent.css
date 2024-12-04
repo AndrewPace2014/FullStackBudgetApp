@@ -5,31 +5,16 @@
 
 h1, h2 {
     color: #333;
-}
-
-.spending-table {
-    width: 100%;
-    border-collapse: collapse;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.spending-table th, .spending-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
+.spending-table, .outlier-table {
+    margin-bottom: 20px;
 }
 
-.spending-table th {
-    background-color: #f2f2f2;
-    color: #333;
-}
-
-.spending-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.spending-table tr:hover {
-    background-color: #f1f1f1;
+.chart-container {
+    height: 400px;
 }
 
 .outlier-list {
@@ -59,4 +44,14 @@ h1, h2 {
 .loading {
     color: #333;
     font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.text-success {
+    color: green;
+}
+
+.text-danger {
+    color: red;
 }
